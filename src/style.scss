@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto';
+}
+body {
+  background-color: #202225;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  width: 100%;
+  min-height: 100vh;
+}
+
+.App {
+  background-color: #e0e1e5;
+  font-family: 'Secular One';
+  color: white;
+  width: 1500px;
+  height: 847.45px;
+  border-radius: 5px;
+}
+
+.content{
+  width: 1436px;
+  height: 814.45px;
+  border-top-left-radius: 12px;
+  background-color: #eeeff1;
+  &__wrapper{
+    display: flex;
+
+  }
+}
+
+.section__title{
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #1a1a1b;
+  column-gap: 8px;
+}
+
+.content__left-container{
+  width: 186px;
+  height: 100%;
+  padding: 7.5px;
+  background-color: #eeeff1;
+  border-top-left-radius: 12px;
+}
+.content__center-container{
+  width: 981px;
+  height: 100%;
+  padding: 7.5px;
+}
+.content__right-container{
+  width: 263px;
+  height: 100%;
+  padding: 7.5px;
+}
