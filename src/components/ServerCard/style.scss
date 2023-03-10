@@ -1,0 +1,96 @@
+.server__card {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  position: relative;
+
+  background-size: cover;
+  background-position: center;
+  transition: 0.2s;
+  cursor: pointer;
+  &::after {
+    content: '';
+    position: absolute;
+
+    height: 0%;
+    width: 0px;
+
+    top: 50%;
+    left: -11px;
+    transform: translateY(-50%);
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background: #000000;
+    transition: 0.15s;
+    opacity: 0;
+  }
+  &:hover {
+    border-radius: 35%;
+    &::after {
+      height: 40%;
+      width: 5px;
+      opacity: 1;
+    }
+  }
+}
+
+.Mui-selected {
+  border-radius: 35%;
+  div.server__card {
+    border-radius: 35%;
+    &::after {
+      height: 90%;
+      width: 5px;
+      opacity: 1;
+    }
+  }
+}
+
+button.MuiToggleButton-root.sidebar__toggle.options {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: 0.2s;
+  font-size: 18px;
+  background: #ffffff;
+  position: relative;
+  color: #23a559;
+  &::after {
+    content: '';
+    position: absolute;
+
+    height: 0%;
+    width: 0px;
+
+    top: 50%;
+    left: -11px;
+    transform: translateY(-50%);
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background: #000000;
+    transition: 0.15s;
+    opacity: 0;
+  }
+  &:hover {
+    border-radius: 35%;
+    color: #ffffff;
+    background: #23a559;
+    &::after {
+      height: 40%;
+      width: 5px;
+      opacity: 1;
+    }
+  }
+
+  &.Mui-selected {
+    border-radius: 35%;
+    color: #ffffff;
+    background: #23a559;
+    &::after {
+      height: 90%;
+      width: 5px;
+      opacity: 1;
+    }
+  }
+}

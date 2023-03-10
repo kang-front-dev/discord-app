@@ -1,13 +1,13 @@
-type Status = 'online' | 'afk' | 'dnd' | 'offline'
+export type Status = 'online' | 'afk' | 'dnd' | 'offline'
 
-interface User{
+export interface IUser{
   id: number,
   avatar: string,
   name: string,
   status: Status,
   activity: Array<string> | string,
 }
-export const users: Array<User> = [
+export const users: Array<IUser> = [
   {
     id: 0,
     avatar: 'https://firebasestorage.googleapis.com/v0/b/blog-app-kang.appspot.com/o/discord%2Fusers%2F017cf5322bfd4b496cef2f3d0924c6ce.jpg?alt=media&token=dabc2ad4-1e9b-48f5-a0fe-fa8ddaefdcd8',
@@ -20,7 +20,7 @@ export const users: Array<User> = [
     avatar: 'https://firebasestorage.googleapis.com/v0/b/blog-app-kang.appspot.com/o/discord%2Fusers%2F09fe6bf7868cf1b227d6b0bdeb412714.jpg?alt=media&token=686346be-4687-44d5-b4c6-af3b9bbf1293',
     name: 'cursed jack',
     status: 'offline',
-    activity: '',
+    activity: 'dont feel anything tbh',
   },
   {
     id: 2,

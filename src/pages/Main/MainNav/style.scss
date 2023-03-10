@@ -4,7 +4,7 @@
 
   display: flex;
   align-items: center;
-
+  border-bottom: 1px #e3e3e3 solid;
   &_input {
     outline: none;
     border: none;
@@ -22,11 +22,12 @@
       display: flex;
       align-items: center;
 
-      padding: 7.5px;
+      padding: 6.5px;
       padding-left: 15px;
       column-gap: 15px;
 
       background-color: #ffffff;
+      border-bottom: 1px #e3e3e3 solid;
     }
     &-list {
       display: flex;
@@ -55,27 +56,118 @@
       }
     }
   }
-  &_btn{
+  &_btn {
     position: relative;
-    & > span{
+    & > span {
       position: absolute;
       top: -3px;
       right: 1px;
       font-size: 17px;
     }
-    &-block{
+    &-block {
       display: flex;
       align-items: center;
       background: #ffffff;
       height: 100%;
-      & > span{
+      & > span {
         height: 20px;
         width: 1px;
         background: #e8e8ea;
         margin: 0 10px;
       }
-      & svg{
+      & svg {
         font-size: 20px;
+      }
+    }
+  }
+  &_dm {
+    background: #ffffff;
+    height: 100%;
+    padding-right: 8px;
+    width: 87%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    & > div {
+      display: flex;
+      align-items: center;
+    }
+    &_friend {
+      &_block {
+        padding: 0 10px;
+        column-gap: 6px;
+        & svg {
+          color: #6d6f78;
+          font-weight: 700;
+          font-size: 20px;
+        }
+      }
+      &_name{
+        font-size: 14px;
+        color: #060607;
+        font-weight: 500;
+      }
+      &_status {
+        position: relative;
+        width: 8px;
+        height: 8px;
+        & .dm-friend_status-icon {
+          &::after {
+            bottom: 50%;
+            right: 50%;
+            transform: translate(50%, 50%);
+          }
+          &.dnd {
+            &::before {
+              bottom: 50%;
+              right: 50%;
+              transform: translate(50%, 50%);
+            }
+          }
+          &.offline {
+            &::before {
+              bottom: 50%;
+              right: 50%;
+              transform: translate(50%, 50%);
+            }
+          }
+          &.afk {
+            & svg {
+              bottom: 50%;
+              right: 50%;
+              transform: translate(50%, 50%) rotate(30deg);
+
+            }
+          }
+        }
+      }
+      &_options{
+        column-gap: 16px;
+        & svg{
+          color: #4e5058;
+          cursor: pointer;
+          font-size: 20px;
+          
+        }
+      }
+      &_search{
+        border: none;
+        outline: none;
+        background: none;
+        width: 100px;
+        color: #686972;
+        font-size: 13px;
+        transition: 0.2s;
+        &:focus{
+          width: 200px;
+        }
+        &_block{
+          background: #e0e1e5;
+          display: flex;
+          align-items: center;
+          padding: 2px 6px;
+          border-radius: 5px;
+        }
       }
     }
   }

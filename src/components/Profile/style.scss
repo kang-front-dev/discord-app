@@ -1,0 +1,68 @@
+.profile {
+  width: 186px;
+  padding: 5px;
+  background-color: #e9eaed;
+
+  position: absolute;
+  bottom: 0px;
+  left: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 6;
+  &__info {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+    padding: 3px 8px;
+    border-radius: 5px;
+    &:hover {
+      background: #d0d2d6;
+    }
+  }
+  &__avatar {
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/blog-app-kang.appspot.com/o/discord%2Fusers%2F27e0e16d30614d09be8bab45f037a436.jpg?alt=media&token=ffdb1271-4003-4374-9006-93f7d28b21f5');
+
+    background-size: cover;
+    background-position: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: relative;
+    &::after {
+      content: '';
+      width: 10px;
+      height: 10px;
+      border: 2px #eeeff1 solid;
+      border-radius: 50%;
+      position: absolute;
+      background: #23a55a;
+      bottom: -2px;
+      right: -2px;
+    }
+  }
+  &__name {
+    font-size: 14px;
+    color: #575961;
+  }
+  &__tag {
+    font-size: 12px;
+    color: #575961;
+  }
+  &__btns {
+    display: flex;
+    align-items: center;
+    & button {
+      padding: 3px;
+      border-radius: 5px;
+      &:hover {
+        background: #d0d2d6;
+      }
+    }
+    & svg {
+      font-size: 18px;
+    }
+  }
+}

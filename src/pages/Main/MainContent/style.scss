@@ -1,0 +1,82 @@
+.main__content {
+  display: flex;
+  &_left {
+    height: 720.45px;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: transparent;
+      transition: 0.2s;
+      border-radius: 1px;
+    }
+    &:hover {
+      &::-webkit-scrollbar-thumb {
+        background: #b7b7b7;
+      }
+    }
+    &_new {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      width: 100%;
+      padding: 5px 10px;
+      color: #575961;
+      font-size: 13px;
+      font-weight: 500;
+      text-transform: uppercase;
+      margin-top: 5px;
+      & span {
+        font-size: 16px;
+        cursor: pointer;
+        pointer-events: all;
+      }
+    }
+  }
+  &_toggle-block {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 4px;
+    & button.main__content_left_toggle {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      padding: 8px 10px;
+      & .main__content_left_toggle_text {
+        flex-grow: 1;
+        text-align: start;
+        margin-left: 15px;
+      }
+    }
+  }
+}
+
+.MuiToggleButton-root.main__content_left_toggle {
+  transition: 0.1s;
+  &:hover {
+    background: #ebebed;
+    border-radius: 5px;
+  }
+}
+.MuiToggleButton-root.main__content_left_new_toggle {
+  transition: 0.1s;
+  &:hover {
+    background: transparent;
+  }
+}
+.main__content_left_toggle.Mui-selected {
+  background: #e1e2e4;
+}
+
+button.dm-friend_parent {
+  padding: 6px 8px;
+}
+
+

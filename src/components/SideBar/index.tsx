@@ -1,21 +1,29 @@
 import React, { useState } from 'react';
-import Channel from '../Channel';
+import Server from '../ServerCard/index';
 
 import { ToggleButton } from '@mui/material';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
-import {MyTooltip} from '../../UI/MyTooltip'
+import { MyTooltip } from '../../UI/MyTooltip';
 
-import { channels } from '../../mocks/channels';
+import { servers } from '../../mocks/servers';
 
+import ExploreIcon from '@mui/icons-material/Explore';
+import AddIcon from '@mui/icons-material/Add';
+import { useNavigate } from 'react-router-dom';
 
 export default function SideBar() {
-  const [toggleValue, setToggleValue] = useState<string | null>('home');
+  const [toggleValue, setToggleValue] = useState<string | null>('');
+  const navigate = useNavigate()
 
   const handleToggle = (
     event: React.MouseEvent<HTMLElement>,
     newValue: string | null
   ) => {
-    if (newValue !== null) {
+    if (newValue !== null && newValue !== '') {
+      navigate(`/server/${newValue}`)
+      setToggleValue(newValue);
+    }else if(newValue === ''){
+      navigate(`/${newValue}`)
       setToggleValue(newValue);
     }
   };
@@ -25,16 +33,16 @@ export default function SideBar() {
       <ToggleButtonGroup
         exclusive
         value={toggleValue}
-        className="channel__list"
+        className="sidebar__list"
         onChange={handleToggle}
       >
         <ToggleButton
-          value={-1}
+          value=''
           style={{ padding: '0', border: 'none', borderRadius: '50%' }}
           className="sidebar__toggle"
         >
           <MyTooltip title="Direct Messages" placement="right">
-            <div className="channel home">
+            <div className="server__card home">
               <img
                 className="discord-icon white"
                 src={require('../../assets/img/logo-white.png')}
@@ -58,24 +66,40 @@ export default function SideBar() {
           <hr className="home__underline" />
         </ToggleButton>
 
-        {channels.map((channel) => {
-          console.log(channel.name);
-
+        {servers.map((server) => {
           return (
             <ToggleButton
-              key={channel.id}
-              value={channel.id}
+              key={server.id}
+              value={server.id}
               style={{ padding: '0', border: 'none', borderRadius: '50%' }}
               className="sidebar__toggle"
             >
-              <MyTooltip title={channel.name} placement="right">
+              <MyTooltip title={server.name} placement="right">
                 <div>
-                  <Channel {...channel} />
+                  <Server {...server} />
                 </div>
               </MyTooltip>
             </ToggleButton>
           );
         })}
+        <ToggleButton
+          value="add"
+          style={{ backgroundColor: 'none', padding: '0', border: 'none' }}
+          className="sidebar__toggle options"
+        >
+          <MyTooltip title="Add a Server" placement="right">
+            <AddIcon className="server__card" />
+          </MyTooltip>
+        </ToggleButton>
+        <ToggleButton
+          value="find"
+          style={{ backgroundColor: 'none', padding: '0', border: 'none' }}
+          className="sidebar__toggle options"
+        >
+          <MyTooltip title='Explore Public Servers' placement='right'>
+            <ExploreIcon className="server__card" />
+          </MyTooltip>
+        </ToggleButton>
       </ToggleButtonGroup>
     </div>
   );

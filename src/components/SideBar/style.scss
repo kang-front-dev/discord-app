@@ -11,7 +11,7 @@
   font-size: 20px;
 }
 
-.home.channel {
+.home.server__card {
   cursor: pointer;
   transition: 0.2s;
   background-color: #ffffff;
@@ -39,7 +39,7 @@
   border: none;
 }
 
-.channel {
+.sidebar {
   &__list {
     display: flex;
     flex-direction: column;
@@ -65,7 +65,7 @@
 }
 
 .Mui-selected.sidebar__toggle {
-  & .channel.home {
+  & .server__card.home {
     border-radius: 35%;
     background: #5865f2;
     & > img.white {

@@ -1,0 +1,44 @@
+.activity{
+  padding-top: 10px;
+  height: 756px;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: none;
+    transition: 0.2s;
+    border-radius: 3px;
+  }
+  &:hover{
+    &::-webkit-scrollbar-thumb{
+      background: #b7b7b7;
+    }
+  }
+  &__title{
+    font-weight: 700;
+    font-size: 18px;
+    color: #060607;
+    margin-bottom: 10px;
+  }
+  &__list{
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+  }
+  &__card{
+    padding: 15px;
+    background: #eeeff1;
+    border-radius: 5px;
+    border: 1px #d4d6d9 solid;
+    cursor: pointer;
+    & .dm-friend_card{
+      & div{
+        max-width: 100%;
+      }
+    }
+  }
+}

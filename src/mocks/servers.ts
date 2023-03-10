@@ -1,10 +1,10 @@
-interface Channel {
+export interface IServer {
   id: number;
   avatar: string;
   name: string;
 }
 
-export const channels: Array<Channel> = [
+export const servers: Array<IServer> = [
   {
     id: 0,
     avatar:

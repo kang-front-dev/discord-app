@@ -1,0 +1,91 @@
+.dm-chat{
+  height: 720px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  padding: 0 10px;
+  &_message{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  &  img{
+    height: 160px;
+    padding-right: 20px;
+    margin-bottom: 40px;
+  }
+  &_wrapper{
+    height: 780px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  
+    padding: 0 10px;
+  }
+  &_input{
+    border: none;
+    outline: none;
+    background: none;
+    flex-grow: 1;
+    padding: 5px 0;
+    font-size: 13px;
+    margin-left: 7px;
+    &_block{
+      background: #eeeff1;
+      display: flex;
+      align-items: center;
+      border-radius: 8px;
+      padding: 3px 7px;
+      & svg{
+        font-size: 21px;
+      }
+    }
+  }
+
+  &_friend{
+    &_avatar{
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background-size: cover;
+      background-position: center;
+      margin-bottom: 8px;
+    }
+    &_name{
+      font-size: 28px;
+      font-weight: 700;
+      color: #060607;
+      margin-bottom: 8px;
+    }
+    &_descr{
+      font-size: 14px;
+      font-weight: 300;
+      color: #4e5058;
+      & span{
+        font-weight: 700;
+      }
+    }
+    &_btn{
+      outline: none;
+      border: none;
+      background: #5865f2;
+      color: #ffffff;
+      font-size: 12px;
+      width: 200px;
+      padding: 10px 0;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.2s;
+      &:hover{
+        background: #4752c4;
+      }
+    }
+    &_wampus{
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
