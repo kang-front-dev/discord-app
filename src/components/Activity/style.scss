@@ -1,12 +1,17 @@
 .activity{
   padding-top: 10px;
   height: 756px;
-  overflow-y: scroll;
+  overflow-y: overlay;
+  position: relative;
   &::-webkit-scrollbar {
     width: 5px;
   }
   &::-webkit-scrollbar-track {
     background: transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
   }
   &::-webkit-scrollbar-thumb {
     background: none;
