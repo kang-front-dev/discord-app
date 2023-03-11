@@ -6,7 +6,7 @@ import Profile from '../../../components/Profile';
 
 export default function Layout() {
   return (
-    <div>
+    <>
       <WindowNav />
       <div className="content__wrapper">
         <SideBar />
@@ -16,6 +16,6 @@ export default function Layout() {
           
         </div>
       </div>
-    </div>
+    </>
   );
 }
