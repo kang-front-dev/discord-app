@@ -35,7 +35,7 @@
         height: 13px;
         border: 4px #eeeff1 solid;
       }
-      .offline {
+      &.offline {
         &::before {
           width: 10px;
           height: 10px;
