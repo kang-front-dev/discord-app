@@ -1,0 +1,116 @@
+.friend__profile {
+  position: relative;
+  padding: 0 10px;
+  background: #eeeff1;
+  padding-top: 65px;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: gray;
+  }
+  &_wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  &_avatar {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    position: relative;
+    border: 3px #eeeff1 solid;
+    z-index: 4;
+    background-position: center;
+    background-size: cover;
+
+    & > .dm-friend_status-icon {
+      &::after {
+        width: 13px;
+        height: 13px;
+        border: 4px #eeeff1 solid;
+      }
+      .offline {
+        &::before {
+          width: 10px;
+          height: 10px;
+          bottom: 0;
+          right: 0;
+        }
+      }
+      &.dnd {
+        &::before {
+          width: 7px;
+          bottom: 7px;
+          right: 5px;
+        }
+      }
+      &.afk{
+        & svg{
+          font-size: 15px;
+          bottom: 0;
+          right: 0;
+        }
+      }
+    }
+  }
+  &_card {
+    background: #ffffff;
+    padding: 12px;
+    border-radius: 7px;
+    margin-top: 20px;
+  }
+  &_name {
+    color: #060607;
+    font-size: 16px;
+    font-weight: 500;
+    & > span {
+      color: #4e5058;
+    }
+    &-block {
+      border-bottom: 1px #e1e2e4 solid;
+    }
+  }
+  &_status {
+    color: #313338;
+    font-size: 12px;
+    margin: 12px 0;
+  }
+  &_member {
+    padding: 10px 0;
+    text-transform: uppercase;
+    font-size: 10px;
+    color: #060607;
+    font-weight: 700;
+    border-bottom: 1px #e1e2e4 solid;
+    &_descr {
+      font-size: 11px;
+      font-weight: 400;
+      color: #313338;
+      margin-top: 10px;
+    }
+  }
+
+  &_notes {
+    padding: 10px 0;
+    &_title {
+      text-transform: uppercase;
+      color: #060607;
+      font-size: 12px;
+    }
+    &_input{
+      margin-top: 10px;
+      outline: none;
+      border: none;
+      font-size: 12px;
+      color: black;
+      width: 100%;
+      resize: none;
+    }
+  }
+}

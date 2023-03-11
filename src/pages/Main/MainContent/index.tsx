@@ -6,8 +6,9 @@ import FriendsList from '../../../components/FriendsList';
 
 import DMList from '../../../components/DMList';
 import Activity from '../../../components/Activity/index';
-import DMChat from '../../../components/DMChat/index'
+import DMChat from '../../../components/DMChat/index';
 import { users } from '../../../mocks/users';
+import FriendProfile from '../../../components/FriendProfile/index'
 
 export default function MainContent() {
   const { currentPage, handleFriends } = useFriends();
@@ -21,7 +22,6 @@ export default function MainContent() {
     if (newValue !== null && newValue !== 'title') {
       handleFriends({ currentPage: newValue, filterValue: 'online' });
       setToggleValue(newValue);
-      console.log(currentPage);
     }
   };
   return (
@@ -36,11 +36,18 @@ export default function MainContent() {
       <ContentContainer type="center">
         <>
           {currentPage === 'friends' ? <FriendsList /> : <></>}
-          {typeof currentPage === 'number' ? <DMChat {...users[currentPage]}/> : null}
+          {typeof currentPage === 'number' ? (
+            <DMChat {...users[currentPage]} />
+          ) : null}
         </>
       </ContentContainer>
       <ContentContainer type="right">
-        <Activity />
+        <>
+        {currentPage === 'friends' ? <Activity /> : <></>}
+        {typeof currentPage === 'number' ? (
+            <FriendProfile {...users[currentPage]} />
+          ) : null}
+        </>
       </ContentContainer>
     </div>
   );

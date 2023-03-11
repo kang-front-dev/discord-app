@@ -20,6 +20,7 @@ import './components/FriendCard/style.scss';
 import './components/Activity/style.scss';
 import './components/Profile/style.scss';
 import './components/DMChat/style.scss';
+import './components/FriendProfile/style.scss';
 
 import { BrowserRouter } from 'react-router-dom';
 
